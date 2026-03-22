@@ -1,0 +1,98 @@
+@charset "utf-8";
+@import url(fonts.css); /* import = 외부에서 가져와서 연결한다는 뜻 */
+
+html,
+body,
+head,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+p,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+table,
+caption,
+thead,
+tr,
+td,
+tbody,
+tfoot,
+header,
+nav,
+section,
+article,
+figure,
+figcaption,
+footer,
+aside,
+form,
+legend,
+fieldset,
+address {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+} /* 페이지 열림 */
+em,
+address {
+  font-style: normal;
+} /* 기울임체를 일반스타일로 변환 */
+table {
+  border-collapse: collapse;
+} /* 셀간의 간격을 없애는 속성 */
+button {
+  border: 0;
+  cursor: pointer;
+} /* 페이지가 열리는 것이 아닌 동작에 관련되어 있음 */
+h1,
+h2,
+h3,
+h4,
+strong,
+b {
+  font-weight: 500;
+}
+
+body {
+  font-family:
+    "Noto Sans KR",
+    "Pretendard Variable",
+    Pretendard,
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    Roboto,
+    "Helvetica Neue",
+    "Segoe UI",
+    "Apple SD Gothic Neo",
+    "Noto Sans KR",
+    "Malgun Gothic",
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    sans-serif;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.blind {
+  font-size: 0;
+  line-height: 0;
+  overflow: hidden;
+  height: 0;
+}
