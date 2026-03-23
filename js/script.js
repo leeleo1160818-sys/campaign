@@ -85,16 +85,14 @@ window.addEventListener("wheel", (e) => {
   }
 });
 
-/* =========================
-   🎬 모달 (완성본)
-========================= */
+/* 모달 */
 
 const openBtns = document.querySelectorAll(".open-video");
 const modal = document.querySelector(".video-modal");
 const closeBtn = document.querySelector(".close-video");
 const video = document.getElementById("mainVideo");
 
-/* 열기 (여러 버튼 대응) */
+/* 열기 */
 openBtns.forEach(btn => {
   btn.addEventListener("click", () => {
     modal.classList.add("active");
@@ -128,5 +126,30 @@ modal.addEventListener("click", (e) => {
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
     closeModal();
+  }
+});
+
+/* 터치로 스크롤 */
+let startY = 0;
+let endY = 0;
+
+window.addEventListener("touchstart", (e) => {
+  startY = e.touches[0].clientY;
+});
+
+window.addEventListener("touchend", (e) => {
+  if (!listening) return;
+
+  endY = e.changedTouches[0].clientY;
+  let diff = startY - endY;
+
+  if (diff > 50 && current < sections.length - 1) {
+    next = current + 1;
+    slideIn();
+  }
+
+  if (diff < -50 && current > 0) {
+    next = current - 1;
+    slideOut();
   }
 });
